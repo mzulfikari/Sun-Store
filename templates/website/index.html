@@ -1,0 +1,795 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}صحقه اصلی{% endblock title %}
+
+<main class="main">
+    <div class="page-content">
+        <div class="container-fluid header-main-wrap">
+            <div class=" header-main">
+                <div class="header-main-title">
+                    <h2>
+                        کالای خود را جستجو کنید
+                    </h2>
+                    <h6>
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                        .<br /> چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.
+                    </h6>
+                </div>
+                <div class="container filter-tabs-wrapper  appear-animate rtl text-right" data-animation-options="{
+        'delay': '.3s'
+    }">
+                    <div class="mx-auto">
+                        <div class="tab tab-nav-simple tab-nav-center tab-nav-boxed">
+                            <form action="#" class="input-wrapper mx-auto">
+                                <input type="text" class="form-control" name="search" autocomplete="off"
+                                    placeholder="جستجو ..." required="">
+                                <button class="btn btn-search btn-rounded btn-dark btn-block btn-gradient" type="submit"
+                                    title="submit-button">
+                                    <i class="fa-light fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="container ellipse-section">
+                    <div class="ellipse-wrap">
+                        <div class="owl-carousel owl-theme owl-shadow-carousel cols-xl-8 cols-lg-6 cols-md-5 cols-xs-2 cols-2"
+                            data-owl-options="{
+     'rtl':true,
+    'nav': false,
+    'dots': false,
+    'items': 8,
+    'loop': true,
+    'autoplay': true,
+    'margin':  20,
+    'responsive': {
+        '0': {
+            'items': 2
+        },
+        '480': {
+            'items': 2
+        },
+        '576': {
+            'items': 3
+        },
+        '768': {
+            'items': 5
+        },
+        '992': {
+            'items': 6
+        },
+        '1200': {
+            'items': 8,
+            'dots': false
+        }
+    }
+}">
+                            <div class="category category-top ">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/1.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">
+                                        <a href="shop-grid.html">تجهیزات نوزاد</a>
+                                    </h4>
+                                    <span class="category-count">
+                                        <span>10</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/2.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">سبزیجات</a></h4>
+                                    <span class="category-count">
+                                        <span>5</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/3.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">پروتئین </a></h4>
+                                    <span class="category-count">
+                                        <span>7</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/4.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">بچه گانه</a></h4>
+                                    <span class="category-count">
+                                        <span>2</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/5.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">
+                                        <a href="shop-grid.html">زنانه </a>
+                                    </h4>
+                                    <span class="category-count">
+                                        <span>8</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/6.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">تجهیزات نوزاد</a></h4>
+                                    <span class="category-count">
+                                        <span>10</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/7.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">آشپزخانه</a></h4>
+                                    <span class="category-count">
+                                        <span>5</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/8.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">لوازم قنادی</a></h4>
+                                    <span class="category-count">
+                                        <span>7</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/9.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name"><a href="shop-grid.html">بچه گانه</a></h4>
+                                    <span class="category-count">
+                                        <span>2</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="category category-top">
+                                <a href="#">
+                                    <figure class="category-media category-media-img">
+                                        <img src="images/categories/10.png" alt="category" />
+                                    </figure>
+                                </a>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">
+                                        <a href="shop-grid.html">کفش </a>
+                                    </h4>
+                                    <span class="category-count">
+                                        <span>8</span>محصول
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="banners-group">
+            <div class="container appear-animate rtl text-right" data-animation-options="{
+                    'delay': '.3s'
+                }">
+                <div class="banner-group1">
+                    <div class="decoration deco-top deco-1">
+                        <img src="images/banner/deco-1.png" alt="banner" width="84" height="84">
+                    </div>
+                    <div class="decoration deco-top deco-2">
+                        <img src="images/banner/deco-2.png" alt="banner" width="232" height="232">
+                    </div>
+                    <div class="container-fluid banners-group-wrap">
+                        <div class="col-md-6 banner-desc-wrapper d-flex ">
+                            <div class="banner-content">
+                                <h3 class="banner-title font-weight-bold mb-2 main-title rtl"> درباره ما</h3>
+                                <p class="text-body mb-5 appear-animate"
+                                    data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.4s'}">
+                                    کالاهای ما، نماد ترکیبی از کیفیت، طراحی برتر، و ارزش ویژه هستند. با تنوع گسترده در
+                                    دسته‌های محصولات، از لباس و لوازم جانبی گرفته تا ابزارهای الکترونیکی و لوازم خانگی،
+                                    هر محصول با دقت و اهتمام به شما ارائه می‌شود. ما به ارائه ویژگی‌های برجسته، قیمت
+                                    منصفانه و تجربه خرید آسان تعهد داریم. با اعتماد به خدمات آنلاین ما، همیشه به دنبال
+                                    تازگی و مدرنیته بپیوندید.
+                                </p>
+                                <a href="#" class="btn mb-1 appear-animate btn-gradient"
+                                    data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.6s'}">
+                                    ما را بیشتر بشناسید
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 banner-images-wrapper">
+                            <div class="row">
+                                <div class="col-12 about-main">
+                                    <img src="images/cartoon1.png"
+                                        data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.4s'}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro-section">
+            <div class="container rtl">
+                <div class="row gutter-sm grid">
+                    <div class="grid-item col-md-8 height-x3">
+                        <div class="intro-slider owl-carousel owl-theme row owl-dot-inner owl-dot-white owl-full-height animation-slider cols-1 gutter-no ltr"
+                            data-owl-options="{
+                                            'items': 1,
+                                            'nav': false,
+                                            'dots': true,
+                                            'loop': true,
+                                            'autoplay': true,
+                                 'animateIn': 'fadeIn',
+                                 'animateOut': 'fadeOut'
+                                        }">
+                            <div class="intro-slide1 banner banner-fixed" style="background-color: #eee">
+                                <figure>
+                                    <img src="images/slides/1.jpg" width="580" height="460" alt="banner" />
+                                </figure>
+                                <div class="banner-content rtl">
+                                    <div class="slide-animate"
+                                        data-animation-options="{'name': 'blurIn', 'duration': '1.4s'}">
+                                        <h4 class="banner-subtitle font-weight-semi-bold mb-2  text-white">
+                                            هر لقمه، داستانی از گرما و تازگی
+                                        </h4>
+                                        <h5 class="banner-title mb-2 text-white">
+                                            نان تازه، طعم خاطره‌ها
+                                        </h5>
+                                        <p class=" font-primary mb-5 text-white">
+                                            با <span class="text-primary font-weight-bold">
+                                                40% تخفیف
+                                            </span>
+                                        </p>
+                                        <a href="#" class="btn btn-rounded mb-1 appear-animate btn-success btn-gradient"
+                                            data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.6s'}">
+                                            فروشگاه
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-slide2 banner banner-fixed" style="background-color: #eee">
+                                <figure>
+                                    <img src="images/slides/2.jpg" width="580" height="460" alt="banner" />
+                                </figure>
+                                <div class="banner-content text-right">
+                                    <div class="slide-animate" data-animation-options="{
+                                                        'name': 'fadeInRightShorter',
+                                                        'duration': '1.6s'
+                                                    }">
+                                        <h4 class="banner-title font-weight-bold mb-3 mb-0 text-white">
+                                            دونات
+                                        </h4>
+                                        <h3 class="banner-stitle mb-3 text-white rtl">برای لحظات به‌ یادماندنی </h3>
+                                        <p class=" mb-7  text-white">
+                                            شروع قیمت از <strong class="text-primary"> 2,500,000 تومان</strong>
+                                        </p>
+                                        <a href="#" class="btn btn-rounded mb-1 appear-animate btn-success btn-gradient"
+                                            data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.6s'}">
+                                            فروشگاه
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item  grid-item-main col-md-4 col-xs-6 height-x1">
+                        <div class="category category-banner category-absolute appear-animate" data-animation-options="{
+                                            'name': 'fadeInLeftShorter',
+                                            'delay': '.1s'
+                                        }">
+                            <img src="images/categories/cat2.png" />
+                            <div class="category-content rtl">
+                                <h4 class="category-name"> پیشنهادهای ویژه</h4>
+                                <span class="category-count">
+                                    <span>و امتیازات </span> ویژه
+                                </span>
+                                <a href="demo14-shop.html" class="btn btn-rounded mb-1 btn-gradient">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item  grid-item-main col-md-4 col-xs-6 height-x1">
+                        <div class="category category-banner category-absolute appear-animate" data-animation-options="{
+                                            'name': 'fadeInLeftShorter',
+                                            'delay': '.1s'
+                                        }">
+                            <img src="images/categories/cat1.png" />
+                            <div class="category-content rtl">
+                                <h4 class="category-name">ارسال سریع و رایگان</h4>
+                                <span class="category-count">
+                                    <span>تمامی</span> نقاط کشور
+                                </span>
+                                <a href="demo14-shop.html" class="btn btn-rounded mb-1 btn-gradient">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item  grid-item-main col-md-4 height-x1">
+                        <div class="category category-banner category-absolute appear-animate" data-animation-options="{
+                                            'name': 'fadeInLeftShorter',
+                                            'delay': '.3s'
+                                        }">
+                            <img src="images/categories/cat3.png" />
+                            <div class="category-content rtl">
+                                <h4 class="category-name">سفارشی‌سازی </h4>
+                                <span class="category-count">
+                                    <span>حک پیام روی محصول </span>
+                                </span>
+                                <a href="demo14-shop.html" class="btn btn-rounded mb-1 btn-gradient">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-space col-1"></div>
+                </div>
+            </div>
+        </section>
+        <section class="appear-animate section-main ltr text-right" data-animation-options="{
+                    'name': 'fadeIn',
+                    'delay': '.1s'
+                    }">
+            <div class="container best-section-wrap">
+                <h3 class="banner-title font-weight-bold mb-2 main-title rtl">کالاهای تخفیف دار</h3>
+                <div class="owl-carousel owl-theme owl-nav-top owl-nav-arrow row cols-lg-4 cols-md-3 cols-2 "
+                    data-owl-options="{
+                                     'rtl':true,
+                                    'nav': true,
+                                    'dots': false,
+                                    'margin': 20,
+                                    'autoplay': true,
+                                    'autoplayTimeout': 5000,
+                                    'responsive': {
+                                        '0': {
+                                            'items': 1,
+                                            'dots': true,
+                                            'nav': false
+                                        },
+                                        '576': {
+                                            'items': 2
+                                        },
+                                        '768': {
+                                            'items': 3
+                                        },
+                                        '992': {
+                                            'items': 3
+                                        },
+                                        '1200': {
+                                            'items': 4
+                                        }
+                                    }
+                                }">
+                    <div class="product product-with-qty box-shadow">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="images/product/5-280x220.jpg" class="img-radius" alt="product">
+                            </a>
+                        </figure>
+                        <div class="product-details rtl">
+                            <h3 class="product-name">
+                                <a href="product.html">دستکش چرم زرد</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width: 100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="product.html" class="rating-reviews">( از 13 نظر )</a>
+                            </div>
+                            <p>
+                                چرم طبیعی گاو و باکیفیت و با دوخت‌های مقاوم به‌طور حرفه‌ای ساخته می‌شوند. چرم به‌طور
+                                طبیعی انعطاف‌پذیر و نرم است .
+                            </p>
+                            <div class="product-price">
+                                <del class="old-price"> 21,500,000 تومان</del><ins class="new-price"> 205,000
+                                    تومان</ins>
+                            </div>
+                            <div class="product-action">
+                                <div class="product-quantity">
+                                    <button title="calculate" class="quantity-minus fa-light fa-minus"></button>
+                                    <input title="input" class="quantity form-control" type="number" min="1"
+                                        max="1000000">
+                                    <button title="calculate" class="quantity-plus fa-light fa-plus"></button>
+                                </div>
+                            </div>
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-quickview btn-gradient" title="بررسی و خرید ">بررسی و
+                                    خرید </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product product-with-qty box-shadow ">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="images/product/2-280x220.jpg" class="img-radius" alt="product">
+                            </a>
+                        </figure>
+                        <div class="product-details rtl">
+                            <h3 class="product-name">
+                                <a href="product.html">کلاه فوتبال امریکایی</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width: 100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="product.html" class="rating-reviews">( از 13 نظر )</a>
+                            </div>
+                            <p>
+                                تکنولوژی‌های پیشرفته و مواد مقاوم، ضربات را جذب کرده و از آسیب‌دیدگی‌های جدی جلوگیری
+                                می‌کنند. طراحی ارگونومیک و فایبرگلس .
+                            </p>
+                            <div class="product-price">
+                                <del class="old-price"> 21,500,000 تومان</del><ins class="new-price"> 205,000
+                                    تومان</ins>
+                            </div>
+                            <div class="product-action">
+                                <div class="product-quantity">
+                                    <button title="calculate" class="quantity-minus fa-light fa-minus"></button>
+                                    <input title="input" class="quantity form-control" type="number" min="1"
+                                        max="1000000">
+                                    <button title="calculate" class="quantity-plus fa-light fa-plus"></button>
+                                </div>
+                            </div>
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-quickview btn-gradient" title="بررسی و خرید ">بررسی و
+                                    خرید </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product product-with-qty box-shadow ">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="images/product/3-280x220.jpg" class="img-radius" alt="product">
+                            </a>
+                        </figure>
+                        <div class="product-details rtl">
+                            <h3 class="product-name">
+                                <a href="product.html">سشوار برون</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width: 100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="product.html" class="rating-reviews">( از 13 نظر )</a>
+                            </div>
+                            <p>
+                                قدرت بالا، وزن سبک، و تنظیم دما و سرعت همچنین با بهره‌گیری از فناوری‌های یونی، موها را
+                                براق، نرم و بدون وز نگه می‌دارند.
+                            </p>
+                            <div class="product-price">
+                                <del class="old-price"> 21,500,000 تومان</del><ins class="new-price"> 205,000
+                                    تومان</ins>
+                            </div>
+                            <div class="product-action">
+                                <div class="product-quantity">
+                                    <button title="calculate" class="quantity-minus fa-light fa-minus"></button>
+                                    <input title="input" class="quantity form-control" type="number" min="1"
+                                        max="1000000">
+                                    <button title="calculate" class="quantity-plus fa-light fa-plus"></button>
+                                </div>
+                            </div>
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-quickview btn-gradient" title="بررسی و خرید ">بررسی و
+                                    خرید </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product product-with-qty box-shadow ">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="images/product/4-280x220.jpg" class="img-radius" alt="product">
+                            </a>
+                        </figure>
+                        <div class="product-details rtl">
+                            <h3 class="product-name">
+                                <a href="product.html">کیف چرم باشگاهی</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width: 100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="product.html" class="rating-reviews">( از 13 نظر )</a>
+                            </div>
+                            <p>
+                                انتخابی ایده‌آل برای افرادی است که به دنبال ترکیبی از استایل و عملکرد هستند. این کیف‌ها
+                                از چرم باکیفیت و بادوام ساخته شده‌.
+                            </p>
+                            <div class="product-price">
+                                <del class="old-price"> 21,500,000 تومان</del><ins class="new-price"> 205,000
+                                    تومان</ins>
+                            </div>
+                            <div class="product-action">
+                                <div class="product-quantity">
+                                    <button title="calculate" class="quantity-minus fa-light fa-minus"></button>
+                                    <input title="input" class="quantity form-control" type="number" min="1"
+                                        max="1000000">
+                                    <button title="calculate" class="quantity-plus fa-light fa-plus"></button>
+                                </div>
+                            </div>
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-quickview btn-gradient" title="بررسی و خرید ">بررسی و
+                                    خرید </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product product-with-qty box-shadow ">
+                        <figure class="product-media">
+                            <a href="product.html">
+                                <img src="images/product/1-280x220.jpg" class="img-radius" alt="product">
+                            </a>
+                        </figure>
+                        <div class="product-details rtl">
+                            <h3 class="product-name">
+                                <a href="product.html">کفش پاشنه بلند با کفی قرمز</a>
+                            </h3>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width: 100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="product.html" class="rating-reviews">( از 13 نظر )</a>
+                            </div>
+                            <p>
+                                طراحی خیره‌کننده و جسورانه‌اش با ترکیب پاشنه‌های بلند و کفی قرمز براق، استایلی لوکس و
+                                بی‌نظیر به هر ظاهر می‌بخشند.
+                            </p>
+                            <div class="product-price">
+                                <del class="old-price"> 21,500,000 تومان</del><ins class="new-price"> 205,000
+                                    تومان</ins>
+                            </div>
+                            <div class="product-action">
+                                <div class="product-quantity">
+                                    <button title="calculate" class="quantity-minus fa-light fa-minus"></button>
+                                    <input title="input" class="quantity form-control" type="number" min="1"
+                                        max="1000000">
+                                    <button title="calculate" class="quantity-plus fa-light fa-plus"></button>
+                                </div>
+                            </div>
+                            <div class="product-action">
+                                <a href="#" class="btn-product btn-quickview btn-gradient" title="بررسی و خرید ">بررسی و
+                                    خرید </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-113.7635 206.6533 771.3147 501.3673" width="771.3147"
+                height="501.3673" role="img" aria-labelledby="ar1mullynfgee71c2kxhmfhktwbiqm3g"
+                class="unlock-vecteezy__path">
+                <desc id="ar1mullynfgee71c2kxhmfhktwbiqm3g"></desc>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M -111.285 207.337 C -108.9 205.944 -105.838 206.747 -104.445 209.132 C 5.919 398.044 157.539 498.59 295.838 533.863 C 331.174 542.876 365.572 547.621 398.162 548.511 C 382.183 511.274 374.035 471.674 375.287 434.743 C 376.778 390.791 391.621 350.275 422.857 322.377 C 484.883 266.978 556.194 278.607 601.311 317.117 C 646.145 355.385 666.081 421.369 623.712 474.048 C 581.048 527.095 504.482 557.673 413.827 558.625 C 414.847 560.694 415.893 562.754 416.963 564.803 C 460.59 648.286 545.329 713.11 651.708 694.932 C 654.43 694.467 657.014 696.296 657.479 699.018 C 657.944 701.74 656.115 704.324 653.393 704.789 C 541.391 723.928 453.023 655.397 408.101 569.435 C 406.228 565.852 404.43 562.237 402.707 558.594 C 367.818 558.036 331.008 553.153 293.367 543.553 C 152.327 507.58 -1.444 405.264 -113.08 214.176 C -114.473 211.792 -113.669 208.73 -111.285 207.337 Z M 409.147 548.666 C 499.587 548.735 574.958 518.711 615.92 467.781 C 653.868 420.598 636.916 360.655 594.819 324.723 C 553.006 289.033 487.344 278.189 429.518 329.835 C 400.829 355.459 386.706 393.089 385.282 435.082 C 384.039 471.73 392.496 511.44 409.147 548.666 Z"
+                    fill="#fef8e8"
+                    transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -5.684341886080802e-14, -2.842170943040401e-14)">
+                </path>
+            </svg>
+        </section>
+        <section class="feature-box p-relative rtl text-right">
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <h3 class="banner-title font-weight-bold mb-2 main-title rtl">
+                            آمار موفقیت کسب‌وکار شما در یک نگاه
+                        </h3>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 feature-body-right">
+                        <div class="appear-animate"
+                            data-animation-options="{'name':'fadeInRightShorter','during':'1.2s'}">
+                            <div class="svg-icon svg-delivery-icon">
+                                <img src="images/icons/icon1.png" />
+                            </div>
+                            <h4 class="title text-normal mb-2">کاهش نرخ پرش کاربران</h4>
+                            <p class="mb-10 pb-4">
+                                طراحی جذاب و محتوای مفید در وب‌سایت، نرخ پرش کاربران را کاهش داده است. این به معنای
+                                ماندگاری بیشتر کاربران در سایت و افزایش احتمال تبدیل آن‌ها به مشتریان واقعی است.
+                            </p>
+                        </div>
+                        <div class="appear-animate"
+                            data-animation-options="{'name':'fadeInRightShorter','during':'1.2s','delay':'.7s'}">
+                            <div class="svg-icon svg-delivery-icon">
+                                <img src="images/icons/icon2.png" />
+                            </div>
+                            <h4 class="title mb-3 text-normal">افزایش تعاملات کاربران</h4>
+                            <p>
+                                .فعالیت کاربران در بخش نظرات، پرسش‌ها و استفاده از امکانات سایت، نشان‌دهنده افزایش
+                                تعاملات است. این تعاملات به ایجاد اعتماد و ارتباط نزدیک‌تر با مشتریان کمک می‌کند.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 col-sm-6 col-12  d-md-show feature-body-center p-relative">
+                        <img class="appear-animate p-absolute" src="images/center.png" alt="Featured image" width="472"
+                            height="362">
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12  feature-body-left text-left">
+                        <div class="appear-animate"
+                            data-animation-options="{'name':'fadeInLeftShorter','during':'1.2s'}">
+                            <div class="svg-icon svg-calory-icon">
+                                <img src="images/icons/icon3.png" />
+                            </div>
+                            <h4 class="title title-1 text-normal d-flex justify-content-end">
+                                افزایش مشتریان وفادار
+                            </h4>
+                            <p class="mr-auto mb-10 pb-2">
+                                یکی از مهم‌ترین نتایج بهبود خدمات و تجربه کاربری، افزایش تعداد مشتریان وفادار است. این
+                                مشتریان نه‌تنها به‌صورت مداوم از خدمات شما استفاده می‌کنند، بلکه شما را به دیگران نیز
+                                معرفی می‌کنند و نقش مهمی در رشد کسب‌وکار دارند.
+                            </p>
+                        </div>
+                        <div class="second-div appear-animate"
+                            data-animation-options="{'name':'fadeInLeftShorter','during':'1.2s','delay':'.7s'}">
+                            <div class="svg-icon svg-calory-icon">
+                                <img src="images/icons/icon4.png" />
+                            </div>
+                            <h4 class="title d-flex mb-3 justify-content-end">رشد فروش آنلاین</h4>
+                            <p class="mr-auto mb-10 pb-2">
+                                با افزایش دسترسی کاربران به وب‌سایت، فروش آنلاین به‌طور چشمگیری رشد کرده است. این رشد
+                                نشان‌دهنده تأثیر استراتژی‌های بازاریابی دیجیتال و بهبود تجربه خرید آنلاین برای مشتریان
+                                است.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="category-tow">
+            <div class="container category-tow-wrap section-main rtl">
+                <h3 class="banner-title font-weight-bold mb-2 main-title rtl">
+                    پرفروش ترین ها
+                </h3>
+                <div class="owl-carousel owl-theme row cols-lg-2 cols-sm-2 cols-1 discount-main" data-owl-options="{
+                                 'rtl':true,
+                                'nav': false,
+                                'dots': true,
+                                'items': 2,
+                                'margin':  20,
+                                'loop': true,
+                                'autoplay': true,
+                                'responsive': {
+                                    '0': {
+                                        'items': 1
+                                    },
+                                    '576': {
+                                        'items': 1
+                                    },
+                                    '992': {
+                                        'items': 2,
+                                        'dots': false
+                                    }
+                                }
+                            }">
+                    <div class="category category-group-image category-tow-item">
+                        <a href="#">
+                            <figure class="category-media">
+                                <img src="images/categories/category130.png" alt="category" width="190" height="169" />
+                            </figure>
+                        </a>
+                        <div class="category-content rtl">
+                            <h4 class="category-name"><a href="shop-grid.html">الکترونیک</a></h4>
+                            <ul class="category-list">
+                                <li><a href="#">دستگاه های تهویه مطبوع</a></li>
+                                <li><a href="#">مردانه</a></li>
+                                <li><a href="#">ساز موسیقی</a></li>
+                                <li><a href="#">دفتر الکترونیک</a></li>
+                                <li><a href="#">تلوزیون</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="category category-group-image category-tow-item">
+                        <a href="#">
+                            <figure class="category-media">
+                                <img src="images/categories/category14.png" alt="category" width="190" height="169" />
+                            </figure>
+                        </a>
+                        <div class="category-content rtl">
+                            <h4 class="category-name"><a href="shop-grid.html">لباس </a></h4>
+                            <ul class="category-list">
+                                <li><a href="#">کفش</a></li>
+                                <li><a href="#">کیف</a></li>
+                                <li><a href="#">مردانه</a></li>
+                                <li><a href="#">کفش های و بوت</a></li>
+                                <li><a href="#">زنانه</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="category category-group-image category-tow-item">
+                        <a href="#">
+                            <figure class="category-media">
+                                <img src="images/categories/category15.png" alt="category" width="190" height="169" />
+                            </figure>
+                        </a>
+                        <div class="category-content rtl">
+                            <h4 class="category-name"><a href="shop-grid.html"> مقایسه ها</a></h4>
+                            <ul class="category-list">
+                                <li><a href="#">کامپیوتر رومیزی</a></li>
+                                <li><a href="#">لپ تاپ</a></li>
+                                <li><a href="#">کامپیوتر رومیزی</a></li>
+                                <li><a href="#">کامپیوتر گیمینگ</a></li>
+                                <li><a href="#">حافظه و مموری</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container appear-animate rtl text-right" data-animation-options="{
+                    'delay': '.3s'
+                }">
+            <section class="banners-group banners-group1">
+                <div class="banner-group2 align-items-center">
+                    <div class="banner-right-section skrollr appear-animate"
+                        data-options='{"data-bottom-top":"transform:translateX(-20%);opacity: 0;","data-center":"transform:translateX(0%);opacity: 1;"}'>
+                        <div class="banner">
+                            <img src="images/banner/8.jpg" class="d-block" alt="banner" width="680" height="346"
+                                style="background-color: rgb(21,  17);">
+                        </div>
+                    </div>
+                    <div class="banner-left-section bg-white mt-4 mt-md-0">
+                        <div class="banner-content pr-3 pl-3 pr-lg-10 y-50 appear-animate"
+                            data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.4s'}">
+                            <h3 class="banner-title font-weight-bold mb-2 main-title rtl">جشنواره بزرگ تخفیف‌ها</h3>
+                            <p class=" mb-4 pl-5">
+                                |فرصتی طلایی برای خرید محصولات مورد علاقه‌تان با قیمت‌های استثنایی است! در این روز خاص،
+                                می‌توانید بهترین کالاها را با تخفیف‌های فوق‌العاده تهیه کنید و از خریدی مقرون‌به‌صرفه
+                                لذت ببرید. از لوازم خانگی و پوشاک گرفته تا گجت‌های هوشمند و لوازم آرایشی، همه چیز در
+                                دسترس شماست. فرصت را از دست ندهید، چرا که این تخفیف‌ها تنها یک‌بار در سال اتفاق
+                                می‌افتند! همین حالا به فروشگاه ما سر بزنید و خریدی لذت‌بخش را تجربه کنید.
+                            </p>
+                            <a href="#"
+                                class="btn btn-gradient mb-1 appear-animate fadeInUpShorter appear-animation-visible"
+                                data-animation-options="{'name': 'fadeInUpShorter', 'delay': '.6s'}"
+                                style="animation-duration: 1.2s;">
+                                فروشگاه
+                            </a>
+                        </div>
+                    </div>
+                    <div class="decoration deco-bottom deco-1">
+                        <img src="images/banner/deco-1.png" alt="banner" width="84" height="84">
+                    </div>
+                    <div class="decoration deco-bottom deco-2">
+                        <img src="images/banner/deco-2.png" alt="banner" width="232" height="232">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
