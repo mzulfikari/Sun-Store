@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}ورود{% endblock title %}
+
+{% block content %}
+        <!-- End Header -->
+        <main class="main rtl text-right">
+            <div class="container section-main">
+                <ul class="breadcrumb default-breadcrumb">
+                    <li><a href="index-2.html"><i class="fa-light fa-home"></i></a></li>
+                    <li>ورود</li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <div class="container">
+                    <div class="login-popup section-main">
+                        <div class="form-box">
+                            <div class="tab tab-nav-simple tab-nav-boxed form-tab">
+                                <h3 class="banner-title font-weight-bold mb-4 main-title ">ورود</h3>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="signin">
+                                        <form action="#">
+                                            <div class="form-group mb-3">
+                                                <input type="text" class="form-control text-left" id="singin-email"
+                                                       name="singin-email" placeholder="نام کاربری یا آدرس ایمیل"
+                                                       required />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control text-left ltr" id="singin-password"
+                                                       name="singin-password" placeholder="رمز عبور" required />
+                                            </div>
+                                            <div class="form-footer">
+                                                <div class="form-checkbox">
+                                                    <input type="checkbox" class="custom-checkbox" id="signin-remember"
+                                                           name="signin-remember" />
+                                                    <label class="form-control-label" for="signin-remember">
+                                                        مرا به خاطر بسپار
+                                                    </label>
+                                                </div>
+                                                <a href="change-password.html" class="lost-link"> رمز عبور خود را فراموش کرده اید؟</a>
+                                            </div>
+                                            <button class="btn btn-yellow btn-block btn-rounded"
+                                                    type="submit">
+                                                ورود
+                                            </button>
+                                        </form>
+                                        {% comment %} <div class="form-choice text-center">
+                                            <label class="ls-m">ورود به سایت</label>
+                                            <div class="social-links">
+                                                <a href="#"
+                                                   class="social-link social-google fab fa-google border-no"></a>
+                                                <a href="#"
+                                                   class="social-link social-facebook fab fa-facebook-f border-no"></a>
+                                                <a href="#"
+                                                   class="social-link social-twitter fab fa-twitter border-no"></a>
+                                            </div> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main -->
+{% endblock content %}
+       

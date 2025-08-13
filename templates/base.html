@@ -2,33 +2,37 @@
 
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>{% block title %}  {% endblock title %}</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{% block title %} {% endblock title %}</title>
     <meta name="keywords" content="قالب HTML5، قالب فروشگاهی، سان شاپ، قالب حرفه‌ای، طراحی سایت فروشگاهی">
-    <meta name="description" content="سان شاپ یک قالب حرفه‌ای فروشگاهی HTML5 با طراحی مدرن، سرعت بالا و قابلیت‌های پیشرفته است. برای راه‌اندازی فروشگاه آنلاین خود با سان شاپ شروع کنید.">
+    <meta name="description"
+        content="سان شاپ یک قالب حرفه‌ای فروشگاهی HTML5 با طراحی مدرن، سرعت بالا و قابلیت‌های پیشرفته است. برای راه‌اندازی فروشگاه آنلاین خود با سان شاپ شروع کنید.">
     <meta name="author" content="DEHGHAN">
     <meta name="robots" content="index, follow">
     <meta name="language" content="fa">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+    <link rel="icon" type="image/png" href="{% static 'images//icons/favicon.png' %}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="{% static  'fonts/awesome/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/awesome/css/all.min.css' %}">
     <!-- Font Vazir -->
-    <link href="fonts/vazir/font-vazir.css" rel="stylesheet" />
-    <!-- Plugins CSS File -->
+    <link href="{% static 'fonts/vazir/font-vazir.css' %}" rel="stylesheet" />
+    <!-- {% static 'plugins CSS File -->
     <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/animate/animate.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/magnific-popup/magnific-popup.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/owl-carousel/owl.carousel.min.css' %}">
-    <!-- Main CSS File -->css
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/owl-carousel/owl.carousel.min.css' %}}">
+    <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-min.css' %}">
 
-     {% block extra_css %} {% endblock extra_css %}
+    {% block extra_css %} {% endblock extra_css %}
 
     {% block extra_css_no_css %} {% endblock extra_css_no_css %}
 
 </head>
+
 <body>
     <div class="bg-loader">
         <div class="loader">
@@ -48,7 +52,7 @@
                             <i class="fa-duotone fa-solid fa-bars"></i>
                         </a>
                         <a href="index-2.html" class="logo ml-0">
-                            <img src="images/logo.png" alt="logo" width="220" height="85" />
+                            <img src="{% static 'images//logo.png' %}" alt="logo" width="220" height="85" />
                         </a>
                     </div>
                     <div class="header-center">
@@ -106,10 +110,11 @@
                                                     <li><a href="shop-grid.html">فرش و کف‌پوش</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-6 col-sm-4 col-md-4 col-lg-3 menu-banner menu-banner1 banner banner-fixed">
+                                            <div
+                                                class="col-6 col-sm-4 col-md-4 col-lg-3 menu-banner menu-banner1 banner banner-fixed">
                                                 <figure>
-                                                    <img src="images/menu/banner-1.jpg" alt="Menu banner" width="221"
-                                                         height="330" />
+                                                    <img src="{% static 'images//menu/banner-1.jpg' %}"
+                                                        alt="Menu banner" width="221" height="330" />
                                                 </figure>
                                                 <div class="banner-content y-50 text-right rtl">
                                                     <h4 class="banner-subtitle font-weight-bold text-white">
@@ -176,10 +181,11 @@
                                                     <li><a href="shop-grid.html">دوربین مداربسته</a></li>
                                                 </ul>
                                             </div>
-                                            <div class="col-6 col-sm-4 col-md-3 menu-banner menu-banner2 banner banner-fixed">
+                                            <div
+                                                class="col-6 col-sm-4 col-md-3 menu-banner menu-banner2 banner banner-fixed">
                                                 <figure>
-                                                    <img src="images/menu/banner-2.jpg" alt="Menu banner" width="221"
-                                                         height="330" />
+                                                    <img src="{% static 'images//menu/banner-2.jpg' %}"
+                                                        alt="Menu banner" width="221" height="330" />
                                                 </figure>
                                                 <div class="banner-content x-50 text-center">
                                                     <h3 class="banner-title text-white">لپ تاپ</h3>
@@ -209,12 +215,15 @@
                                             <ul>
                                                 <li> <a href="product.html">محصول</a></li>
                                                 <li> <a href="product-discount.html">محصول ( تخفیف دار )</a></li>
-                                                <li> <a href="shop-grid-discount.html">فروشگاه - گریدی ( تخفیف دار )</a></li>
+                                                <li> <a href="shop-grid-discount.html">فروشگاه - گریدی ( تخفیف دار )</a>
+                                                </li>
                                                 <li> <a href="shop-grid.html">فروشگاه - گریدی </a></li>
-                                                <li> <a href="shop-list-discount.html">فروشگاه - فیلتر ( تخفیف دار)</a></li>
+                                                <li> <a href="shop-list-discount.html">فروشگاه - فیلتر ( تخفیف دار)</a>
+                                                </li>
                                                 <li> <a href="shop-list-stock.html">فروشگاه - فیلتر (ناموجود)</a></li>
                                                 <li> <a href="shop-list.html">فروشگاه - فیلتر</a></li>
-                                                <li> <a href="shop-side-discount.html">فروشگاه - سایدبار ( تخفیف دار )</a></li>
+                                                <li> <a href="shop-side-discount.html">فروشگاه - سایدبار ( تخفیف دار
+                                                        )</a></li>
                                                 <li> <a href="shop-side-stock.html">فروشگاه - سایدبار (ناموجود)</a></li>
                                                 <li> <a href="shop-side.html"> فروشگاه - سایدبار</a></li>
                                             </ul>
@@ -307,8 +316,8 @@
                                     <div class="product product-cart">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="images/cart/product-1.jpg" alt="product" width="80"
-                                                     height="88" />
+                                                <img src="{% static 'images//cart/product-1.jpg' %}" alt="product"
+                                                    width="80" height="88" />
                                             </a>
                                             <button class="btn btn-link btn-close">
                                                 <i class="fas fa-times"></i><span class="sr-only">بستن</span>
@@ -325,8 +334,8 @@
                                     <div class="product product-cart">
                                         <figure class="product-media">
                                             <a href="product.html">
-                                                <img src="images/cart/product-2.jpg" alt="product" width="80"
-                                                     height="88" />
+                                                <img src="{% static 'images//cart/product-2.jpg' %}" alt="product"
+                                                    width="80" height="88" />
                                             </a>
                                             <button class="btn btn-link btn-close">
                                                 <i class="fas fa-times"></i><span class="sr-only">بستن</span>
@@ -351,7 +360,8 @@
                                 <!-- End of Cart Total -->
                                 <div class="cart-action">
                                     <a href="cart.html" class="btn btn-dark btn-link">نمایش خرید </a>
-                                    <a href="checkout.html" class="btn btn-rounded btn-dark btn-block btn-gradient"><span>پرداخت</span></a>
+                                    <a href="checkout.html"
+                                        class="btn btn-rounded btn-dark btn-block btn-gradient"><span>پرداخت</span></a>
                                 </div>
                                 <!-- End of Cart Action -->
                             </div>
@@ -374,76 +384,82 @@
                                                     role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link active border-no lh-1 "
-                                                           href="#signin">ورود </a>
+                                                            href="{% url 'accounts:login' %}">ورود </a>
                                                     </li>
                                                     <li class="delimiter">یا</li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link border-no lh-1 "
-                                                           href="#register">  ثبت نام</a>
+                                                        <a class="nav-link border-no lh-1 " href="#register"> ثبت
+                                                            نام</a>
                                                     </li>
                                                 </ul>
                                                 <div class="tab-content">
                                                     <div class="tab-pane active" id="signin">
                                                         <form action="#">
                                                             <div class="form-group mb-3">
-                                                                <input type="text" class="form-control text-left" id="singin-email"
-                                                                       name="singin-email"
-                                                                       placeholder="نام کاربری یا آدرس ایمیل" required="">
+                                                                <input type="text" class="form-control text-left"
+                                                                    id="singin-email" name="singin-email"
+                                                                    placeholder="نام کاربری یا آدرس ایمیل" required="">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="password" class="form-control text-left ltr"
-                                                                       id="singin-password" name="singin-password"
-                                                                       placeholder="رمز عبور" required="">
+                                                                <input type="password"
+                                                                    class="form-control text-left ltr"
+                                                                    id="singin-password" name="singin-password"
+                                                                    placeholder="رمز عبور" required="">
                                                             </div>
                                                             <div class="form-footer">
                                                                 <div class="form-checkbox">
                                                                     <input type="checkbox" class="custom-checkbox"
-                                                                           id="signin-remember" name="signin-remember">
+                                                                        id="signin-remember" name="signin-remember">
                                                                     <label class="form-control-label"
-                                                                           for="signin-remember">
+                                                                        for="signin-remember">
                                                                         مرا به خاطر بسپار
                                                                     </label>
                                                                 </div>
-                                                                <a href="#" class="lost-link"> رمز عبور خود را فراموش کرده اید؟</a>
+                                                                <a href="#" class="lost-link"> رمز عبور خود را فراموش
+                                                                    کرده اید؟</a>
                                                             </div>
-                                                            <button class="btn btn-block btn-gradient" type="submit">ورود</button>
+                                                            <button class="btn btn-block btn-gradient"
+                                                                type="submit">ورود</button>
                                                         </form>
                                                         <div class="form-choice text-center">
                                                             <label>یا وارد شوید با</label>
                                                             <div class="social-links">
                                                                 <a href="#"
-                                                                   class="social-link social-google fab fa-google border-no"></a>
+                                                                    class="social-link social-google fab fa-google border-no"></a>
                                                                 <a href="#"
-                                                                   class="social-link social-facebook fab fa-facebook-f border-no"></a>
+                                                                    class="social-link social-facebook fab fa-facebook-f border-no"></a>
                                                                 <a href="#"
-                                                                   class="social-link social-twitter fab fa-twitter border-no"></a>
+                                                                    class="social-link social-twitter fab fa-twitter border-no"></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane" id="register">
                                                         <form action="#">
                                                             <div class="form-group mb-3">
-                                                                <input type="email" class="form-control text-left" id="register-email"
-                                                                       name="register-email" placeholder="آدرس ایمیل"
-                                                                       required="">
+                                                                <input type="email" class="form-control text-left"
+                                                                    id="register-email" name="register-email"
+                                                                    placeholder="آدرس ایمیل" required="">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="password" class="form-control text-left ltr"
-                                                                       id="register-password" name="register-password"
-                                                                       placeholder="رمز عبور" required="">
+                                                                <input type="password"
+                                                                    class="form-control text-left ltr"
+                                                                    id="register-password" name="register-password"
+                                                                    placeholder="رمز عبور" required="">
                                                             </div>
                                                             <div class="form-footer">
                                                                 <div class="form-checkbox">
                                                                     <input type="checkbox" class="custom-checkbox"
-                                                                           id="register-agree" name="register-agree"
-                                                                           required="">
-                                                                    <label class="form-control-label" for="register-agree">
+                                                                        id="register-agree" name="register-agree"
+                                                                        required="">
+                                                                    <label class="form-control-label"
+                                                                        for="register-agree">
                                                                         اطلاعات شما محفوظ است
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                            <button class="btn btn-rounded btn-dark btn-block btn-gradient"
-                                                                    type="submit">
+                                                            <button
+                                                                class="btn btn-rounded btn-dark btn-block btn-gradient"
+                                                                type="submit">
                                                                 ثبت نام
                                                             </button>
                                                         </form>
@@ -451,18 +467,19 @@
                                                             <label>یا ثبت نام با</label>
                                                             <div class="social-links">
                                                                 <a href="#"
-                                                                   class="social-link social-google fab fa-google border-no"></a>
+                                                                    class="social-link social-google fab fa-google border-no"></a>
                                                                 <a href="#"
-                                                                   class="social-link social-facebook fab fa-facebook-f border-no"></a>
+                                                                    class="social-link social-facebook fab fa-facebook-f border-no"></a>
                                                                 <a href="#"
-                                                                   class="social-link social-twitter fab fa-twitter border-no"></a>
+                                                                    class="social-link social-twitter fab fa-twitter border-no"></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button title="Close (Esc)" type="button" class="mfp-close"><span>×</span></button>
+                                        <button title="Close (Esc)" type="button"
+                                            class="mfp-close"><span>×</span></button>
                                     </div>
                                 </div>
                                 <!-- End Dropdown Box -->
@@ -477,7 +494,7 @@
                         <div class="header-right">
                             <div class="dropdown category-header category-dropdown " data-visible="true">
                                 <a href="#" class="category-toggle" role="button" data-toggle="dropdown"
-                                   data-display="static" title="دسته بندی ها را مرور کنید">
+                                    data-display="static" title="دسته بندی ها را مرور کنید">
                                     <i class="fa-light fa-table-cells-large"></i>
                                     <span class="divider"></span>
                                     <span>دسته بندی ها </span>
@@ -503,7 +520,7 @@
                                                     <h4 class="menu-title"> آشپزخانه و پذیرایی</h4>
                                                     <ul>
                                                         <li><a href="#">سرویس چای‌خوری</a> </li>
-                                                        <li><a href="#">ظروف سرو غذا </a>  </li>
+                                                        <li><a href="#">ظروف سرو غذا </a> </li>
                                                         <li><a href="#">ظروف نگهداری</a></li>
                                                         <li><a href="#">ابزار آشپزخانه</a></li>
                                                         <li><a href="#">حوله و دستمال آشپزخانه</a></li>
@@ -512,18 +529,18 @@
                                                 <li>
                                                     <div class="banner-fixed menu-banner menu-banner4 content-middle">
                                                         <figure>
-                                                            <img src="images/menu/banner-4.jpg" alt="Menu Banner"
-                                                                 width="235" height="347" />
+                                                            <img src="{% static 'images//menu/banner-4.jpg' %}"
+                                                                alt="Menu Banner" width="235" height="347" />
                                                         </figure>
                                                         <div class="banner-content rtl">
-                                                            <h4 class="banner-subtitle mb-2 font-weight-normal text-white">
+                                                            <h4
+                                                                class="banner-subtitle mb-2 font-weight-normal text-white">
                                                                 پیشنهاد سان شاپ
                                                             </h4>
                                                             <h3 class="banner-title text-white">
                                                                 شمع های <br>دست ساز
                                                             </h3>
-                                                            <a href="#"
-                                                               class="btn btn-md btn-block btn-gradient">
+                                                            <a href="#" class="btn btn-md btn-block btn-gradient">
                                                                 بررسی و خرید
                                                             </a>
                                                         </div>
@@ -575,8 +592,8 @@
                                                 <li>
                                                     <div class="menu-banner banner-fixed menu-banner5">
                                                         <figure>
-                                                            <img src="images/menu/banner-5.jpg" alt="Menu Banner"
-                                                                 width="235" height="461" />
+                                                            <img src="{% static 'images//menu/banner-5.jpg' %}"
+                                                                alt="Menu Banner" width="235" height="461" />
                                                         </figure>
                                                         <div class="banner-content rtl">
                                                             <h4 class="banner-subtitle text-white font-weight-normal">
@@ -613,9 +630,9 @@
                                                     <ul>
                                                         <li><a href="#">چمدان چرخدار</a></li>
                                                         <li><a href="#">چمدان کوچک</a></li>
-                                                        <li><a href="#">چمدان  بزرگ</a></li>
+                                                        <li><a href="#">چمدان بزرگ</a></li>
                                                         <li><a href="#">چمدان دیپلمات</a></li>
-                                                        <li><a href="#">چمدان  زنانه</a></li>
+                                                        <li><a href="#">چمدان زنانه</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
@@ -639,8 +656,8 @@
                                                 <li>
                                                     <div class="menu-banner banner-fixed menu-banner5">
                                                         <figure>
-                                                            <img src="images/menu/banner-6.jpg" alt="Menu Banner"
-                                                                 width="235" height="433" />
+                                                            <img src="{% static 'images//menu/banner-6.jpg' %}"
+                                                                alt="Menu Banner" width="235" height="433" />
                                                         </figure>
                                                         <div class="banner-content rtl">
                                                             <h4 class="banner-subtitle font-weight-normal text-white">
@@ -648,12 +665,12 @@
                                                             </h4>
                                                             <h3 class="banner-title text-white mb-4">
                                                                 زنانه<br>مردانه<br>کودکانه
-                                                                <br><span class="text-white d-inline-block mt-2 font-weight-bold">
+                                                                <br><span
+                                                                    class="text-white d-inline-block mt-2 font-weight-bold">
                                                                     40% تخفیف
                                                                 </span>
                                                             </h3>
-                                                            <a href="#"
-                                                               class="btn btn-md btn-block btn-gradient">
+                                                            <a href="#" class="btn btn-md btn-block btn-gradient">
                                                                 بررسی و خرید
                                                             </a>
                                                         </div>
@@ -711,25 +728,25 @@
                                                 <div class="row">
                                                     <div class="col-md-3 col-lg-3 col-6">
                                                         <figure>
-                                                            <img src="images/menu/1.png" alt="Menu Banner" width="172"
+                                                            <img src="{% static 'images//menu/1.png" alt="Menu Banner" width="172"
                                                                  height="106" />
                                                         </figure>
                                                     </div>
                                                     <div class="col-md-3 col-lg-3 col-6">
                                                         <figure>
-                                                            <img src="images/menu/2.png" alt="Menu Banner" width="172"
+                                                            <img src="{% static 'images//menu/2.png" alt="Menu Banner" width="172"
                                                                  height="106" />
                                                         </figure>
                                                     </div>
                                                     <div class="col-md-3 col-lg-3 col-6">
                                                         <figure>
-                                                            <img src="images/menu/3.png" alt="Menu Banner" width="172"
+                                                            <img src="{% static 'images//menu/3.png" alt="Menu Banner" width="172"
                                                                  height="106" />
                                                         </figure>
                                                     </div>
                                                     <div class="col-md-3 col-lg-3 col-6">
                                                         <figure>
-                                                            <img src="images/menu/4.png" alt="Menu Banner" width="172"
+                                                            <img src="{% static 'images//menu/4.png" alt="Menu Banner" width="172"
                                                                  height="106" />
                                                         </figure>
                                                     </div>
@@ -791,16 +808,17 @@
 
         
 
-        {% block content %} {% endblock content  %}
+        {% block content %}   {% endblock content  %}
 
       
 
-        <footer class="footer rtl text-right">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="logo-footer-wrap">
-                        <a href="index-2.html" class="logo-footer pb-4 pb-lg-0">
-                            <img src="images/logo-footer.png" alt="logo-footer" width="154" height="43" />
+        <footer class=" footer rtl text-right">
+                                                            <div class="container">
+                                                                <div class="footer-top">
+                                                                    <div class="logo-footer-wrap">
+                                                                        <a href="index-2.html"
+                                                                            class="logo-footer pb-4 pb-lg-0">
+                                                                            <img src="{% static 'images/logo-footer.png"" alt="logo-footer" width="154" height="43" />
                         </a>
                     </div>
                     <div class="footer-top-info col-lg-7 ">
@@ -891,8 +909,8 @@
                                 <div class="widget-body">
                                     <h4 class="widget-title">نمادهای اعتماد</h4>
                                     <figure class="widget-body row rtl">
-                                        <div class="nemad-box"><img src="images/enemad.png" alt="نماد اعتماد الکترونیک"></div>
-                                        <div class="nemad-box"><img src="images/samandehi.png" alt="نماد ساماندهی"></div>
+                                        <div class="nemad-box"><img src="{% static 'images//enemad.png" alt="نماد اعتماد الکترونیک"></div>
+                                        <div class="nemad-box"><img src="{% static 'images//samandehi.png" alt="نماد ساماندهی"></div>
                                     </figure>
                                 </div>
                             </div>
@@ -1152,25 +1170,50 @@
             <!-- End of MobileMenu -->
         </div>
     </div>
-    <!-- Plugins JS File -->
-    <script src="{% static 'plugin/jquery/jquery.min.html' %}"></script>
-    <script src="{% static 'plugin/sticky/sticky.min.html' %}"></script>
-    <script src="{% static 'plugin/imagesloaded/imagesloaded.pkgd.min.html' %}"></script>
-    <script src="{% static 'plugin/elevatezoom/jquery.elevatezoom.min.html' %}"></script>
-    <script src="{% static 'plugin/magnific-popup/jquery.magnific-popup.min.html' %}"></script>
-    <script src="{% static 'plugin/owl-carousel/owl.carousel.min-2.html' %}"></script>
-    <!-- Main JS File -->
-    <script src="js/main.min.js"></script>
-    <script src="plugin/isotope/isotope.pkgd.min.html"></script>
-    <script>
-        window.addEventListener('load', function () {
-            const loaderContainer = document.querySelector('.bg-loader');
-            loaderContainer.classList.add('hide');
-        });
-    </script>
-    {% block extra_js %} {% endblock extra_js %}
+    <!-- {% static 'plugins js' %} File -->
+     <script src=" {% static 'plugin-js/jquery/jquery.min.js' %}"></script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/parallax/parallax.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/sticky/sticky.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/imagesloaded/imagesloaded.pkgd.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/elevatezoom/jquery.elevatezoom.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/magnific-popup/jquery.magnific-popup.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js}/owl-carousel/owl.carousel.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin-js/nouislider/nouislider.min.js' %}">
+                                                                            </script>
+                                                                            <!-- Main js' %} File -->
+                                                                            <script src="{% static 'js/main.min.js' %}">
+                                                                            </script>
+                                                                            <script
+                                                                                src="{% static 'plugin/isotope/isotope.pkgd.min.html' %}">
+                                                                            </script>
+                                                                            <script>
+                                                                                window.addEventListener('load',
+                                                                                    function() {
+                                                                                        const loaderContainer =
+                                                                                            document.querySelector(
+                                                                                                '.bg-loader');
+                                                                                        loaderContainer.classList
+                                                                                            .add('hide');
+                                                                                    });
+                                                                            </script>
+                                                                            {% block extra_js %} {% endblock extra_js %}
 
-    {% block extra_css_no_js %} {% endblock extra_css_no_js %}
+                                                                            {% block extra_js_no_js %}
+                                                                            {% endblock extra_js_no_js  %}
 
 </body>
+
 </html>
