@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.core.validators import RegexValidator
 
-
 class UserType(models.IntegerChoices):
     """
     Type users
@@ -14,8 +13,6 @@ class UserType(models.IntegerChoices):
     superuser = 1,_('superuser')
     admin = 2,_('admin')
     customer = 3,_('customer')
-
-
 
 class UserManager(BaseUserManager):
     """
@@ -27,12 +24,9 @@ class UserManager(BaseUserManager):
         if not phone:
             raise ValueError("لطفا شماره تلفن را وارد کنید")
 
-        user = self.model(
-            phone=phone,password=password,**extra_fields
-        )
-
+        user = self.model(phone=phone,**extra_fields)
         user.set_password(password)
-        user.save()
+        user.save(using=self._db)
         return user
 
 
@@ -42,8 +36,8 @@ class UserManager(BaseUserManager):
         """
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
-        extra_fields.setdefault("is_superuser", True)
-        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+        extra_fields.setdefault("is_verified", True)
         extra_fields.setdefault("type", UserType.superuser.value)
         
         
@@ -53,7 +47,6 @@ class UserManager(BaseUserManager):
             raise ValueError(_("Superuser must have is_superuser=True."))
         return self.create_user(phone, password, **extra_fields)
 
-       
 
 class User(AbstractBaseUser,PermissionsMixin):
     
@@ -64,16 +57,16 @@ class User(AbstractBaseUser,PermissionsMixin):
         default=False
     )
     is_active = models.BooleanField(
-        default=False
+        default=True
     )
     is_verified = models.BooleanField(
         default=False
     )
-    type = models.ImageField(
+    type = models.IntegerField(
         choices=UserType.choices,default=UserType.customer.value,verbose_name= _('نقش کاربر')
     )
     created_dete = models.DateTimeField(
-        auto_created=True,verbose_name=_('تاریخ ایجاد '),
+        auto_now_add=True,verbose_name=_('تاریخ ایجاد '),
     )
     update_date = models.DateTimeField(
       verbose_name= _(' تاریخ بروز رسانی'),auto_now=True
@@ -82,12 +75,15 @@ class User(AbstractBaseUser,PermissionsMixin):
     USERNAME_FIELD = "phone"
     REQUIRED_FIELDS = []
     
-    
     objects = UserManager()
+    
+    class Meta:
+        verbose_name = 'کاربر'
+        verbose_name_plural = 'مدیریت کاربران '
+    
     
     def __str__(self):
         return self.phone
-
 
 
 class Profile (models.Model):
@@ -107,8 +103,22 @@ class Profile (models.Model):
         upload_to="profile",null=True, blank=True,verbose_name= _('تصویر پروفایل')
     )
     created_dete = models.DateTimeField(
-        auto_created=True,verbose_name=_('تاریخ ایجاد '),
+        auto_now_add=True,verbose_name=_('تاریخ ایجاد '),
     )
     update_date = models.DateTimeField(
         auto_now=True,verbose_name= _(' تاریخ بروز رسانی')
     )
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+    
+    class Meta:
+        verbose_name = 'پروفایل'
+        verbose_name_plural = 'مدیریت پروفایل ها '
+    
+@receiver(post_save,sender=User)
+def cerated_profile(sender,instance,created,**kwargs):
+    if created and  instance.type == UserType.customer.value:
+        Profile.objects.create(user=instance)
+        
+    
