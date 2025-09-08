@@ -8,9 +8,9 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{% block title %} {% endblock title %}</title>
-    <meta name="keywords" content="قالب HTML5، قالب فروشگاهی، سان شاپ، قالب حرفه‌ای، طراحی سایت فروشگاهی">
+    <meta name="keywords" content="">
     <meta name="description"
-        content="سان شاپ یک قالب حرفه‌ای فروشگاهی HTML5 با طراحی مدرن، سرعت بالا و قابلیت‌های پیشرفته است. برای راه‌اندازی فروشگاه آنلاین خود با سان شاپ شروع کنید.">
+        content="">
     <meta name="author" content="DEHGHAN">
     <meta name="robots" content="index, follow">
     <meta name="language" content="fa">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/animate/animate.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/magnific-popup/magnific-popup.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'plugin-js/owl-carousel/owl.carousel.min.css' %}}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/toastify/toastify.css' %}">
     <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/main-min.css' %}">
 
@@ -368,7 +369,7 @@
                             <!-- End Dropdown Box -->
                         </div>
                         <div class="login-wrap">
-                            <a href="{% url 'accounts:login' %} class="login-toggle link-to-tab">
+                            <a href="{% url 'accounts:login' %} class=" login-toggle link-to-tab">
                                 <i class="fa-duotone fa-user"></i>ورود
                             </a>
                             <span class="delimiter">/</span>
@@ -808,7 +809,7 @@
 
         
 
-        {% block content %}   {% endblock content  %}
+        {% block content %}   {% endblock content %}
 
       
 
@@ -1171,48 +1172,29 @@
         </div>
     </div>
     <!-- {% static 'plugins js' %} File -->
-     <script src=" {% static 'plugin-js/jquery/jquery.min.js' %}"></script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/parallax/parallax.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/sticky/sticky.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/imagesloaded/imagesloaded.pkgd.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/elevatezoom/jquery.elevatezoom.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/magnific-popup/jquery.magnific-popup.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js}/owl-carousel/owl.carousel.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin-js/nouislider/nouislider.min.js' %}">
-                                                                            </script>
-                                                                            <!-- Main js' %} File -->
-                                                                            <script src="{% static 'js/main.min.js' %}">
-                                                                            </script>
-                                                                            <script
-                                                                                src="{% static 'plugin/isotope/isotope.pkgd.min.html' %}">
-                                                                            </script>
-                                                                            <script>
-                                                                                window.addEventListener('load',
-                                                                                    function() {
-                                                                                        const loaderContainer =
-                                                                                            document.querySelector(
-                                                                                                '.bg-loader');
-                                                                                        loaderContainer.classList
-                                                                                            .add('hide');
-                                                                                    });
-                                                                            </script>
-                                                                            {% block extra_js %} {% endblock extra_js %}
-
-                                                                            {% block extra_js_no_js %}
-                                                                            {% endblock extra_js_no_js  %}
+    <script src=" {% static 'plugin-js/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'plugin-js/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'plugin-js/sticky/sticky.min.js' %}"></script>
+    <script src="{% static 'plugin-js/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugin-js/elevatezoom/jquery.elevatezoom.min.js' %}"></script>
+    <script src="{% static 'plugin-js/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'plugin-js}/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugin-js/nouislider/nouislider.min.js' %}"></script>
+    <!-- Main js' %} File -->
+    <script src="{% static 'js/main.min.js' %}"></script>
+    <script src="{% static 'plugin/isotope/isotope.pkgd.min.html' %}"></script>
+    <script src="{% static 'vendor/toastify/toastify.js' %}"></script>
+    <script>
+    window.addEventListener('load',
+    function() {
+    const loaderContainer =
+    document.querySelector(
+    '.bg-loader');
+    loaderContainer.classList
+    .add('hide');
+    });</script>
+{% block extra_js %} {% endblock extra_js %}
+{% block extra_js_no_js %} {% endblock extra_js_no_js %}
 
 </body>
 

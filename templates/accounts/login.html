@@ -19,15 +19,13 @@
                                 <h3 class="banner-title font-weight-bold mb-4 main-title ">ورود</h3>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="signin">
-                                        <form action="#">
+                                        <form action="#" method="post">
+                                            {% csrf_token %} 
                                             <div class="form-group mb-3">
-                                                <input type="text" class="form-control text-left" id="singin-email"
-                                                       name="singin-email" placeholder="نام کاربری یا آدرس ایمیل"
-                                                       required />
+                                            {{form.username}}
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control text-left ltr" id="singin-password"
-                                                       name="singin-password" placeholder="رمز عبور" required />
+                                                {{form.password}}
                                             </div>
                                             <div class="form-footer">
                                                 {% comment %} <div class="form-checkbox">
@@ -64,5 +62,20 @@
             </div>
         </main>
         <!-- End of Main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    {% if errors %}
+        {% for error in errors %}
+            Toastify({
+                text: "{{ error|escapejs }}",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#FF4C4C"
+            }).showToast();
+        {% endfor %}
+    {% endif %}
+});
+</script>
 {% endblock content %}
        
