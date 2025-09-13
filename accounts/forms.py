@@ -13,7 +13,8 @@ class LoginForm(forms.Form):
     }))
     password = forms.CharField(
     widget=forms.PasswordInput(
-    attrs={'class':'form-control text-left ltr'
+    attrs={'class':'form-control text-left ltr',
+           "placeholder":"گذرواژه"
     }))
 
     def clean_username(self):

@@ -246,8 +246,8 @@
                                         <li>
                                             <a href="#">ورود و تنظیمات </a>
                                             <ul>
-                                                <li><a href="login.html">ورود</a></li>
-                                                <li><a href="register.html">ثبت نام</a></li>
+                                                <li><a href="{% url 'accounts:login' %}">ورود</a></li>
+                                                <li><a href="{% url 'accounts:register' %}">ثبت نام</a></li>
                                                 <li><a href="password-change.html">تغییر رمز</a></li>
                                                 <li><a href="password-forgot.html">فراموشی رمز</a></li>
                                             </ul>
@@ -369,11 +369,11 @@
                             <!-- End Dropdown Box -->
                         </div>
                         <div class="login-wrap">
-                            <a href="{% url 'accounts:login' %} class=" login-toggle link-to-tab">
+                            <a href="{% url 'accounts:login' %}">
                                 <i class="fa-duotone fa-user"></i>ورود
                             </a>
                             <span class="delimiter">/</span>
-                            <a href="#register" class="register-toggle link-to-tab mr-0">ثبت نام</a>
+                            <a href="{% url 'accounts:register' %}">ثبت نام</a>
                             <div class="dropdown login-dropdown off-canvas">
                                 <div class="canvas-overlay"></div>
                                 <!-- End Login Toggle -->
@@ -389,7 +389,7 @@
                                                     </li>
                                                     <li class="delimiter">یا</li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link border-no lh-1 " href="#register"> ثبت
+                                                        <a class="nav-link border-no lh-1 " href="{% url 'accounts:register' %}"> ثبت
                                                             نام</a>
                                                     </li>
                                                 </ul>
@@ -1019,8 +1019,8 @@
                         <li>
                             <a href="#">ورود و تنظیمات</a>
                             <ul>
-                                <li><a href="login.html">ورود </a></li>
-                                <li><a href="register.html">ثبت نام </a></li>
+                                <li><a href="{% url 'accounts:login' %}">ورود </a></li>
+                                <li><a href="{% url 'accounts:register' %}">ثبت نام </a></li>
                                 <li><a href="password-change.html">تغییر رمز عبور</a></li>
                                 <li><a href="password-forgot.html">تغییر پسورد</a></li>
                             </ul>

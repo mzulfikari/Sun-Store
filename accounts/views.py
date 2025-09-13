@@ -3,11 +3,15 @@ from django.contrib.auth import views as auth_views
 from django.views import View
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
-
+from django.views.generic import TemplateView
 
 class LoginViews(View):
-        
+    """
+    Checking the login system through the phone number as the main key or email and password
+    """
     def get (self, request):
+        if request.user.is_authenticated:
+            return redirect('/')
         form = LoginForm()
         return render(request,'accounts/login.html',{'form':form})
     
@@ -33,6 +37,10 @@ class LoginViews(View):
             })       
     
     
+class RegisterViews(TemplateView):
+    template_name = 'accounts/register.html'
+  
    
 class LogoutViews(auth_views.LogoutView):
+    
     pass

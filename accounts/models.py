@@ -1,3 +1,5 @@
+from django.utils import timezone
+from datetime import timedelta
 from django.db import models
 from django.dispatch import receiver
 from django.db.models.signals import post_save
@@ -122,3 +124,51 @@ def cerated_profile(sender,instance,created,**kwargs):
         Profile.objects.create(user=instance,pk=instance.pk)
         
     
+
+
+class Otp(models.Model):
+    """ 
+    Authentication related model
+    with token creation feature
+    """
+    token = models.CharField(
+        max_length=200, null=True, verbose_name='توکن'
+    )
+    phone = models.CharField(
+    max_length=11,
+    validators=[RegexValidator(regex=r'^09\d{9}$', message='شماره تلفن باید با 09 شروع شده و 11 رقم باشد')],
+    verbose_name='شماره تلفن'
+    )
+
+    code = models.SmallIntegerField(
+        verbose_name='کد یکبار مصرف'
+        )
+    code_expiry = models.DateTimeField(
+        verbose_name='تاریخ انقضای کد',default=timezone.now() + timedelta(minutes=2),
+        )
+    is_used = models.BooleanField(
+        default=False, verbose_name='استفاده شده؟'
+        )
+    
+    
+    class  Meta:
+        verbose_name = 'رمز یکبار مصرف'
+        verbose_name_plural = ' احراز هویت Otp'
+
+    def is_valid(self, code):
+        if self.code == code and not self.is_used and self.code_expiry:
+            if timezone.now() <= self.code_expiry:
+                return True
+            else:
+                self.delete()
+                return False
+        return False
+
+    def set_code(self, code):
+        self.code = code
+        self.code_expiry = timezone.now() + timedelta(minutes=2)
+        self.save()
+
+    @classmethod
+    def clean_expired_codes(cls):
+        cls.objects.filter(models.Q(is_used=True) | models.Q(code_expiry__lt=timezone.now())).delete()

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from.models import Profile
+from.models import Otp, Profile
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -82,3 +82,6 @@ class CustomProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile,CustomProfileAdmin)
 admin.site.register(User, CustomUserAdmin)
 
+@admin.register(Otp)
+class OTPAdmin(admin.ModelAdmin):
+    list_display = ("phone", "code",)
