@@ -1,9 +1,16 @@
+from random import randint
+from uuid import uuid4
 from django.shortcuts import render,redirect
 from django.contrib.auth import views as auth_views
 from django.views import View
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm
+from accounts.admin import User
+from .forms import CheckOtpform, LoginForm
 from django.views.generic import TemplateView
+from.forms import Otp,RegisterForm
+from django.urls import reverse
+
+
 
 class LoginViews(View):
     """
@@ -37,10 +44,89 @@ class LoginViews(View):
             })       
     
     
-class RegisterViews(TemplateView):
-    template_name = 'accounts/register.html'
-  
+class RegisterView(View):
+    """User login through phone number and email"""
+
+    def get (self,request):
+        form = RegisterForm()
+        return render (request,'accounts/register.html',{'form':form})
+
+    def post(self,request):
+        phone = request.POST.get('phone')
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+          
+            valid = form.cleaned_data
+            randcode = randint(1000,9999)
+            #دریافت رمز یکبار مصرف
+            # sms_api.verification({
+            #     'receptor':valid["phone"],'type':'1','template':'randcode','param1':randcode
+            # })
+            token = str(uuid4())
+
+            Otp.objects.create(phone=valid['phone'],
+                code=randcode,
+                token=token
+                )
+            
+            
+            return redirect(reverse('account:Verify') + f'?token={token}')
+        else:
+                form.add_error('phone', "اطلاعات وارد شده صحیح نمی باشد ")
+        return render(request,"verify.html",{'form':form,'phone': phone})
+
+
+class CheckOtp(View):
+    """
+    To authenticate the entered number and expire
+    the one-time code within 2 minutes
+    """
+
+    def get(self, request):
+        form = CheckOtpform()
+        return render(request, 'verify.html',
+            {'form': form })
+
+    def post(self,request):
+        token = request.GET.get('token')
+        form = CheckOtpform(request.POST)
+
+        if form.is_valid():
+            valid = form.cleaned_data
+
+            if Otp.objects.filter(code=valid['code'],
+              token=token,
+            ).exists():
+             otp = Otp.objects.get(token=token)
+
+             if otp.is_expired:
+                    form.add_error('code', "کد منقضی شده است")
+                    return render(request, 'verify.html', {'form': form})
+             user , is_created = User.objects.get_or_create(phone=otp.phone,)
+             
+             User.objects.create_user(
+                phone=form.cleaned_data.get('phone'),
+                last_name=form.cleaned_data.get('last_name'),
+                first_name=form.cleaned_data.get('first_name'),
+                password=form.cleaned_data.get('password')
+                )
+
+             login(request,
+                   user,
+                   backend="django.contrib.auth.backends.ModelBackend")
+             return redirect('/')
+
+            otp.delete()
+
+        else:
+            form.add_error(None, "اطلاعات وارد شده صحیح نمی باشد ")
+
+        return render(request,'verify.html',{'form':form })
+   
+   
    
 class LogoutViews(auth_views.LogoutView):
-    
+    """
+    Logot 
+    """
     pass
