@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}ثبت نام{% endblock title %}
+{% block title %}کد تایید{% endblock title %}
 {% block content %}
 
 <!-- End Header -->
@@ -8,7 +8,7 @@
     <div class="container section-main">
         <ul class="breadcrumb default-breadcrumb">
             <li><a href="{% url 'website:Home' %}"><i class="fa-light fa-home"></i></a></li>
-            <li> ثبت نام </li>
+            <li>کد تایید</li>
         </ul>
     </div>
     <div class="page-content">
@@ -16,27 +16,16 @@
             <div class="login-popup  section-main">
                 <div class="form-box">
                     <div class="tab tab-nav-simple tab-nav-boxed form-tab">
-                        <h3 class="banner-title font-weight-bold mb-4 main-title ">ثبت نام</h3>
+                        <h3 class="banner-title font-weight-bold mb-4 main-title " style="font-size:16px;" >کد تایید ارسال شده به شماره تلفن {{ phone }} را وارد کنید</h3>
                         <form  method="post">
                         {% csrf_token %}
                             <div class="form-group">
-                            {{form.first_name}}
-                            </div>
-                            
-                            <div class="form-group">
-                                {{ form.last_name }}
-                            </div>
-                            <div class="form-group">
-                                {{ form.phone }}
-                            </div>
-                            <div class="form-footer">
-                                
+                            {{form.code}}
                             </div>
                             <button class="btn btn-yellow btn-block btn-rounded" type="submit">
-                                ثبت نام
+                                 تایید
                             </button>
                         </form>
-                        
                         </div>
                     </div>
                 </div>

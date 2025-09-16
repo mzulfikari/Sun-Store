@@ -63,17 +63,12 @@ class RegisterView(View):
             #     'receptor':valid["phone"],'type':'1','template':'randcode','param1':randcode
             # })
             token = str(uuid4())
-
-            Otp.objects.create(phone=valid['phone'],
-                code=randcode,
-                token=token
-                )
-            
-            
-            return redirect(reverse('account:Verify') + f'?token={token}')
+            request.session['phone'] = valid['phone']
+            Otp.objects.create(phone=valid['phone'],code=randcode,token=token)
+            return redirect(reverse('accounts:otp') + f'?token={token}')
         else:
-                form.add_error('phone', "اطلاعات وارد شده صحیح نمی باشد ")
-        return render(request,"verify.html",{'form':form,'phone': phone})
+            form.add_error('phone', "اطلاعات وارد شده صحیح نمی باشد")
+        return render(request, "accounts/register.html",{'form': form,})
 
 
 class CheckOtp(View):
@@ -84,8 +79,8 @@ class CheckOtp(View):
 
     def get(self, request):
         form = CheckOtpform()
-        return render(request, 'verify.html',
-            {'form': form })
+        phone = request.session.get('phone') 
+        return render(request, 'accounts/otp.html',{'form': form,'phone': phone})
 
     def post(self,request):
         token = request.GET.get('token')
@@ -95,33 +90,29 @@ class CheckOtp(View):
             valid = form.cleaned_data
 
             if Otp.objects.filter(code=valid['code'],
-              token=token,
-            ).exists():
-             otp = Otp.objects.get(token=token)
+              token=token,).exists():otp = Otp.objects.get(token=token)
 
-             if otp.is_expired:
+            if otp.is_expired:
                     form.add_error('code', "کد منقضی شده است")
-                    return render(request, 'verify.html', {'form': form})
-             user , is_created = User.objects.get_or_create(phone=otp.phone,)
+                    return render(request, 'accounts/otp.html', {'form': form})
+            user , is_created = User.objects.get_or_create(phone=otp.phone,)
              
-             User.objects.create_user(
-                phone=form.cleaned_data.get('phone'),
-                last_name=form.cleaned_data.get('last_name'),
-                first_name=form.cleaned_data.get('first_name'),
-                password=form.cleaned_data.get('password')
-                )
-
-             login(request,
-                   user,
-                   backend="django.contrib.auth.backends.ModelBackend")
-             return redirect('/')
-
+            if is_created:
+                user.first_name = valid.get('first_name')
+                user.last_name = valid.get('last_name')
+                user.save()      
             otp.delete()
+            request.session.pop('phone', None) 
+            
+            login(request,user,backend="django.contrib.auth.backends.ModelBackend")
+            return redirect('/')
+
+            
 
         else:
-            form.add_error(None, "اطلاعات وارد شده صحیح نمی باشد ")
+             form.add_error(None, "اطلاعات وارد شده صحیح نمی باشد ")
 
-        return render(request,'verify.html',{'form':form })
+        return render(request,'accounts/otp.html',{'form':form })
    
    
    

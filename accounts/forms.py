@@ -8,12 +8,12 @@ from .models import Otp
 class LoginForm(forms.Form):
     username = forms.CharField(
     widget=forms.TextInput(
-    attrs={'class':'form-control text-left',
+    attrs={'class':'form-control text-right',
     "placeholder":"شماره همراه یا ایمیل "
     }))
     password = forms.CharField(
     widget=forms.PasswordInput(
-    attrs={'class':'form-control text-left ltr',
+    attrs={'class':'form-control text-right',
            "placeholder":"گذرواژه"
     }))
 
@@ -51,14 +51,19 @@ class RegisterForm(forms.Form):
     
     first_name = forms.CharField (
     widget=forms.TextInput(
-    attrs={'class': 'form-control text-left',
-        'placeholder': 'نام کاربری'
+    attrs={'class': 'form-control text-right',
+        'placeholder': 'نام'
            }
-
+    ))
+    last_name = forms.CharField (
+      widget=forms.TextInput(
+     attrs={'class': 'form-control text-right',
+        'placeholder': 'نام خانوداگی'
+           }
     ))
     phone = forms.CharField (
     widget=forms.TextInput(
-    attrs={'class': 'form-control text-left',
+    attrs={'class': 'form-control text-right',
            'placeholder': 'شماره تلفن'
         }),
     min_length=11, max_length=11
@@ -109,7 +114,7 @@ class RegisterForm(forms.Form):
 class CheckOtpform(forms.ModelForm):
     code = forms.CharField(
     widget=forms.TextInput(
-    attrs={'class': 'w-full drop-shadow-lg outline-none rounded-2xl py-2 text-center'})
+    attrs={'class': 'form-control text-left'})
     ,max_length=4)
 
     def clean_code(self):
