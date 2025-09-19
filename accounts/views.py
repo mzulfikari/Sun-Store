@@ -82,32 +82,30 @@ class CheckOtp(View):
         phone = request.session.get('phone') 
         return render(request, 'accounts/otp.html',{'form': form,'phone': phone})
 
+
     def post(self,request):
         token = request.GET.get('token')
         form = CheckOtpform(request.POST)
 
         if form.is_valid():
             valid = form.cleaned_data
-
             if Otp.objects.filter(code=valid['code'],
-              token=token,).exists():otp = Otp.objects.get(token=token)
+             token=token,).exists():otp = Otp.objects.get(token=token)
+                  
+            if not otp:
+                form.add_error('code', "کد اشتباه است")
+                return render(request, 'accounts/otp.html', {'form': form})
 
-            if otp.is_expired:
-                    form.add_error('code', "کد منقضی شده است")
-                    return render(request, 'accounts/otp.html', {'form': form})
             user , is_created = User.objects.get_or_create(phone=otp.phone,)
-             
             if is_created:
                 user.first_name = valid.get('first_name')
                 user.last_name = valid.get('last_name')
                 user.save()      
             otp.delete()
             request.session.pop('phone', None) 
-            
             login(request,user,backend="django.contrib.auth.backends.ModelBackend")
-            return redirect('/')
-
             
+            return redirect('/')
 
         else:
              form.add_error(None, "اطلاعات وارد شده صحیح نمی باشد ")

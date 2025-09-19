@@ -155,20 +155,3 @@ class Otp(models.Model):
         verbose_name = 'رمز یکبار مصرف'
         verbose_name_plural = ' احراز هویت Otp'
 
-    def is_valid(self, code):
-        if self.code == code and not self.is_used and self.code_expiry:
-            if timezone.now() <= self.code_expiry:
-                return True
-            else:
-                self.delete()
-                return False
-        return False
-
-    def set_code(self, code):
-        self.code = code
-        self.code_expiry = timezone.now() + timedelta(minutes=2)
-        self.save()
-
-    @classmethod
-    def clean_expired_codes(cls):
-        cls.objects.filter(models.Q(is_used=True) | models.Q(code_expiry__lt=timezone.now())).delete()
